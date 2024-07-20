@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G-Weather-Forecast</title>
+  <link rel="stylesheet" href="./css/index.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Nav -->
+    <nav>
+      <p>Weather Dashboard</p>
+    </nav>
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+      <div>
+        <p>Enter a City Name</p>
+      </div>
+      <div>
+        <input id="js-search" type="text" placeholder="E.g., New York, London, Tokyo">
+        <div class="drop-down"></div>
+      </div>
+      <div>
+        <input id="js-btn-search" type="submit" value="Search">
+        <div class="line">
+          <span>or</span>
+        </div>
+        <input id="js-btn-current-location" type="submit" value="Use Current Location">
+      </div>
+    </section>
+
+    <!-- Main -->
+    <main id="js-weather-container"></main>
+
+    <!-- Content -->
+    <section class="content">
+      <div class="sub-content">
+        <div>
+          <p><span class="js-day-forecast">4</span>-Day Forecast</p>
+        </div>
+        <div class="main-sub-content js-forecasts">
+        </div>
+      </div>
+
+      <div class="sub-content">
+        <div>
+          <p>History Search</p>
+        </div>
+        <div class="main-sub-content"></div>
+      </div>
+      
+    </section>
+    
+    <footer>
+      <div>
+        <div>
+          <p>Quick and Easy Signup for Weather Notification</p>
+          <img src="assets/images/bell.png" alt="" width="30px" height="30px">
+        </div>
+        <div>
+          <div>
+            <p>Enter your email</p>
+          </div>
+          <div>
+            <input type="text" placeholder="Email">
+            <input type="submit">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

@@ -53,8 +53,8 @@ This README provides instructions on how to set up and deploy a weather applicat
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/trieuvy793/G-Weather-Forecast.git
+   cd G-Weather-Forecast
 
 2. **Install Dependencies**
 3.  ```bash

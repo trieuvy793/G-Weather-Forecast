@@ -130,7 +130,7 @@ const verifyEmail = async (req, res) => {
 
     const upsertData = responseUpsert.data;
 
-    res.status(201).json({ message: 'Verification successful', redirectUrl: 'http://localhost:3000/' });
+    res.status(201).json({ message: 'success' });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

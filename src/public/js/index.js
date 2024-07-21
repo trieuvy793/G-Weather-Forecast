@@ -168,6 +168,27 @@ $(document).ready(function () {
     suggestions.hide();
   });
 
+  $('#js-btn-subscribe').click(function () {
+    var email = $('#js-email').val();
+
+    if (email) {
+        $.ajax({
+            url: '/api/member/subscribe',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ email: email }),
+            success: function(response) {
+                alert('Verification email sent');
+            },
+            error: function(xhr, status, error) {
+                alert('Error: ' + xhr.responseText);
+            }
+        });
+    } else {
+        alert('Please enter a valid email address');
+    }
+  });
+
   fetchCurrentWheather();
   updateForecastContent();
 

@@ -1,6 +1,8 @@
 const express = require('express');
 const weatherRoutes = require('./routes/weather.route');
+const memberRoutes = require('./routes/member.route');
 const path = require('path');
+
 const dotenv = require('dotenv').config();
 
 const app = express();
@@ -17,6 +19,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/weather', weatherRoutes);
+app.use('/api/member', memberRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

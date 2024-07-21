@@ -4,8 +4,8 @@
 This README provides instructions on how to set up and deploy a weather application using the WeatherAPI service. The application includes essential features for fetching and displaying weather information, along with optional enhancements for improved user experience.
 
 ## Features
-
-### Must Have
+## demo: https://drive.google.com/file/d/1Z-7oDprUf4rZPlPiMMPVJ9rVtApDU06d/view?usp=drive_link
+### 
 1. **Technical**
    - BE: ExpressJS.
    - FE: HTML, CSS, JS

@@ -2,7 +2,8 @@ $(document).ready(function () {
   const searchInput = $('#js-search');
   const suggestions = $('#sidebar .drop-down');
   let dayForecast = $('.js-day-forecast').text();
-  console.log(dayForecast)
+  let btnforecastsMore = $('#js-btn-forecasts')
+  $('.js-day-forecast').text(4);
 
 
   async function fetchSuggestions(query) {
@@ -136,6 +137,7 @@ $(document).ready(function () {
     let query = { location: location, days: days };
     const forecastData = await fetchForecastsWeather(query);
     if (forecastData) {
+      $('.js-forecasts').html('')
       $('.js-forecasts').html(renderForecastContent(forecastData.forecastday));
     }
   };
@@ -166,6 +168,15 @@ $(document).ready(function () {
     const val = $(this).text();
     searchInput.val(val).data('url', url);
     suggestions.hide();
+  });
+
+  btnforecastsMore.on('click', function () {
+    $('.js-day-forecast').text(8);
+    let location = searchInput.data('url');
+    if (location) {
+      updateForecastContent(location, 9);
+    }
+
   });
 
   $('#js-btn-subscribe').click(function () {

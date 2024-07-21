@@ -16,7 +16,7 @@ This README provides instructions on how to set up and deploy a weather applicat
 
 ## Features
 
-### Must Have
+### 
 1. **Technical**
    - BE: ExpressJS.
    - FE: HTML, CSS, JS
@@ -28,11 +28,11 @@ This README provides instructions on how to set up and deploy a weather applicat
    - A 4-day weather forecast is available, with the option to load more days.
 
 3. **Weather History**
-   - The application saves temporary weather information to allow users to view the history during the day.
+   - X: The application saves temporary weather information to allow users to view the history during the day. X
 
 4. **Email Subscription**
-   - Users can register to receive daily weather forecasts via email.
-   - There is an option to unsubscribe from email notifications.
+   - Users can register to receive daily weather forecasts via email. 
+   - X: There is an option to unsubscribe from email notifications. X
    - Email confirmation is required for subscriptions.
 
 5. **Deployment**
@@ -41,7 +41,7 @@ This README provides instructions on how to set up and deploy a weather applicat
 ### Nice to Have
 - Responsive design for desktops, tablets, and mobile phones.
 - Smooth animations.
-- Setup project using Docker.
+- X: Setup project using Docker. X
 
 ## Setup Instructions
 

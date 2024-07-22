@@ -4,13 +4,13 @@ const transporter = require('../utils/mailer');
 
 // Hàm gửi email xác thực
 const sendVerificationEmail = async (email, verificationCode) => {
-  const url = `http://localhost:3000/api/member/verify-email?code=${verificationCode}`;
+  const url = `https://g-weather-forecast-six.vercel.app/api/member/verify-email?code=${verificationCode}`;
 
   await transporter.sendMail({
     from: 'no-reply@weather.com',
     to: email,
     subject: 'Email Verification',
-    html: `<p>Please verify your email by clicking the link: <a href="${url}">${url}</a></p>`
+    html: `<p>Please verify your email by clicking the link: <a href="${url}">click</a></p>`
   });
 };
 

@@ -1,9 +1,12 @@
 const express = require('express');
-const { getLocations, getCurrentWeather, getForecasts } = require('../controllers/weather.controller');
 const router = express.Router();
+const weatherController = require('../controllers/weather.controller');
+const { authenticateToken } = require('../middlewares/auth.middleware');
 
-router.get('/search', getLocations);
-router.get('/current', getCurrentWeather);
-router.get('/forecasts', getForecasts);
+router.post('/generate-token', weatherController.generateTokenController);
+router.get('/locations', authenticateToken, weatherController.getLocations);
+router.get('/current-weather', authenticateToken, weatherController.getCurrentWeather);
+router.get('/forecasts', authenticateToken, weatherController.getForecasts);
+router.get('/history', authenticateToken, weatherController.getHistory);
 
 module.exports = router;

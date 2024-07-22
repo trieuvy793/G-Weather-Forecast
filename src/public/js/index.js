@@ -79,6 +79,21 @@ $(document).ready(function () {
     }
   }
 
+  const fetchHistory = async () => {
+    try {
+      const response = await $.ajax({
+        url: '/api/weather/history',
+        method: 'GET',
+        dataType: 'json',
+        xhrFields: { withCredentials: true },
+      })
+
+      renderHistory(response);
+    } catch (error) {
+      console.error('Error fetching history:', error);
+    }
+  };
+
   function showSuggestions(data) {
     suggestions.show().empty();
     data.forEach(item => {
@@ -155,6 +170,37 @@ $(document).ready(function () {
     </div>
   `;
 
+  const renderHistory = (history) => {
+
+    histories.empty();
+
+    history.forEach(entry => {
+      const historyItem = `
+        <div>
+          <div>
+            <p><span class="future-date">${entry.data.location.name}/${entry.data.location.country} </br>${entry.data.current.last_updated}</span></p>
+          </div>
+          <div>
+            <img src="${entry.data.current.condition.icon}" alt="" width="40px" height="40px">
+          </div>
+          <div>
+            <div>
+              <span>Temp: <span class="temp-future">${entry.data.current.temp_c}<span>°C</span></span>
+            </div>
+            <div>
+              <span>Wind: <span class="wind-future">${(entry.data.current.wind_kph/3.6).toFixed(2)}<span> M/S</span></span>
+            </div>
+            <div>
+              <span>Humidity: <span class="humidity-future">${entry.data.current.humidity}<span>%</span></span>
+            </div>
+          </div>
+        </div>
+      `;
+      histories.append(historyItem);
+    });
+  };
+
+
   const renderForecastContent = (forecasts) => forecasts.slice(1).map(renderForecast).join('');
 
   const updateForecastContent = async (location, days = 5) => {
@@ -228,51 +274,6 @@ $(document).ready(function () {
       alert('Please enter a valid email address');
     }
   });
-
-  const fetchHistory = async () => {
-    try {
-      const response = await $.ajax({
-        url: '/api/weather/history',
-        method: 'GET',
-        dataType: 'json',
-        xhrFields: { withCredentials: true },
-      })
-
-      renderHistory(response);
-    } catch (error) {
-      console.error('Error fetching history:', error);
-    }
-  };
-
-  const renderHistory = (history) => {
-
-    histories.empty();
-
-    history.forEach(entry => {
-      const historyItem = `
-        <div>
-          <div>
-            <p><span class="future-date">${entry.data.location.name}/${entry.data.location.country} </br>${entry.data.current.last_updated}</span></p>
-          </div>
-          <div>
-            <img src="${entry.data.current.condition.icon}" alt="" width="40px" height="40px">
-          </div>
-          <div>
-            <div>
-              <span>Temp: <span class="temp-future">${entry.data.current.temp_c}<span>°C</span></span>
-            </div>
-            <div>
-              <span>Wind: <span class="wind-future">${(entry.data.current.wind_kph/3.6).toFixed(2)}<span> M/S</span></span>
-            </div>
-            <div>
-              <span>Humidity: <span class="humidity-future">${entry.data.current.humidity}<span>%</span></span>
-            </div>
-          </div>
-        </div>
-      `;
-      histories.append(historyItem);
-    });
-  };
 
   fetchToken();
   dayForecast.text(4);

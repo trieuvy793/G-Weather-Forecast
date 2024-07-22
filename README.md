@@ -4,7 +4,7 @@
 This README provides instructions on how to set up and deploy a weather application using the WeatherAPI service. The application includes essential features for fetching and displaying weather information, along with optional enhancements for improved user experience.
 
 ## Features
-## demo: https://drive.google.com/file/d/1Z-7oDprUf4rZPlPiMMPVJ9rVtApDU06d/view?usp=drive_link
+## demo: https://drive.google.com/file/d/1lre2l3S3s0NhDWQZ1deAGzWmG6o7gqV0/view?usp=sharing
 ### 
 1. **Technical**
    - BE: ExpressJS.
@@ -28,7 +28,7 @@ This README provides instructions on how to set up and deploy a weather applicat
    - A 4-day weather forecast is available, with the option to load more days.
 
 3. **Weather History**
-   - X: The application saves temporary weather information to allow users to view the history during the day. X
+   - The application saves temporary weather information to allow users to view the history during the day.
 
 4. **Email Subscription**
    - Users can register to receive daily weather forecasts via email. 

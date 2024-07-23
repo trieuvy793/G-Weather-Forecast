@@ -9,7 +9,7 @@ This README provides instructions on how to set up and deploy a weather applicat
 1. **Technical**
    - BE: ExpressJS.
    - FE: HTML, CSS, JS
-   - Hygraeather-Forecast
+   - Hygraph CMS
 # Weather Application README
 
 This README provides instructions on how to set up and deploy a weather application using the WeatherAPI service. The application includes essential features for fetching and displaying weather information, along with optional enhancements for improved user experience.

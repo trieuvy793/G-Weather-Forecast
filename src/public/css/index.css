@@ -163,7 +163,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: url(https://img.freepik.com/free-photo/view-starry-night-sky-with-nature-mountains-landscape_23-2151614878.jpg?t=st=1721539055~exp=1721542655~hmac=a198efe9a9fc8090e51e8018e7b10c4e01c96931d2428d08670038d328101695&w=1060) no-repeat center center fixed;
+  /* background: url(https://img.freepik.com/free-photo/view-starry-night-sky-with-nature-mountains-landscape_23-2151614878.jpg?t=st=1721539055~exp=1721542655~hmac=a198efe9a9fc8090e51e8018e7b10c4e01c96931d2428d08670038d328101695&w=1060) no-repeat center center fixed; */
+  background-color: var(--primary-color);
   background-size: cover;
 }
 
